@@ -71,7 +71,7 @@ function App(): React.JSX.Element {
    * https://github.com/react-native-community/discussions-and-proposals/discussions/827
    */
   const safePadding = '5%';
-
+  const innerViewRef = React.useRef(null)
   return (
     <View style={backgroundStyle}>
       <StatusBar
@@ -79,6 +79,7 @@ function App(): React.JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <ScrollView
+        innerViewRef={innerViewRef}
         style={backgroundStyle}>
         <View style={{paddingRight: safePadding}}>
           <Header/>
